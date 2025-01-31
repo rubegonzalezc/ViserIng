@@ -60,12 +60,12 @@
 const stats = [
   {
     icon: 'mdi-office-building',
-    value: 150,
+    value: 4,
     label: 'Clientes Activos'
   },
   {
     icon: 'mdi-check-circle',
-    value: 500,
+    value: 16,
     label: 'Proyectos Completados'
   },
   {
@@ -82,24 +82,28 @@ const stats = [
 
 const clients = [
   {
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'AWS'
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Logo_Homecenter_Sodimac.png/800px-Logo_Homecenter_Sodimac.png',
+    alt: 'Sodimac'
   },
   {
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'Microsoft'
+    logo: 'https://dumay.cl/vistas/images/logo-light-gray.png',
+    alt: 'Dumay'
   },
   {
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'Google'
+    logo: 'https://www.republicparking.cl/web/wp-content/uploads/2022/01/republicparking_logo1-e1731927469392.png',
+    alt: 'Republic Parking'
   },
   {
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'IBM'
+    logo: 'https://www.vinilit.cl/wp-content/uploads/2022/03/logo-vinilit.png',
+    alt: 'Vinilit'
   },
   {
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'Siemens'
+    logo: 'https://www.bender-latinamerica.com/fileadmin/bootstrap_package_med/Resources/img/logos/Bender-GmbH-Co-KG-Logo.svg',
+    alt: 'Bender'
+  },
+  {
+    logo: 'https://irritec.cl/wp-content/uploads/2025/01/logo-Irritec.png#10572',
+    alt: 'Irritec'
   }
 ]
 </script>

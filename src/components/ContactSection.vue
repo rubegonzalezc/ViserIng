@@ -18,7 +18,7 @@
               <v-icon icon="mdi-map-marker" size="24"></v-icon>
             </div>
             <h3>Ubicación</h3>
-            <p>Chile</p>
+            <p>Av. Quillin #4375, Macul, Santiago, Chile</p>
           </div>
           
           <div class="info-card">
@@ -26,7 +26,7 @@
               <v-icon icon="mdi-phone" size="24"></v-icon>
             </div>
             <h3>Teléfono</h3>
-            <p>+1 234 567 890</p>
+            <p>+56 9 6219 0820</p>
           </div>
           
           <div class="info-card">
@@ -34,12 +34,19 @@
               <v-icon icon="mdi-email" size="24"></v-icon>
             </div>
             <h3>Email</h3>
-            <p>contacto@viser.com</p>
+            <p>contacto@viser.cl</p>
           </div>
         </div>
 
         <!-- Formulario de contacto -->
-        <v-form class="contact-form" @submit.prevent="handleSubmit" data-aos="fade-left">
+        <v-form 
+          class="contact-form" 
+          @submit.prevent="handleSubmit" 
+          data-aos="fade-left"
+          action="https://formsubmit.co/contacto@viser.cl"
+          method="POST"
+          ref="formRef"
+        >
           <div class="form-header">
             <h3>Envíanos un mensaje</h3>
             <p>Nos pondremos en contacto contigo lo antes posible</p>
@@ -47,7 +54,8 @@
           
           <div class="form-row">
             <v-text-field
-              v-model="form.nombre"
+              v-model="formData.nombre"
+              name="nombre"
               label="Nombre completo"
               variant="outlined"
               :rules="[rules.required]"
@@ -55,7 +63,8 @@
             ></v-text-field>
             
             <v-text-field
-              v-model="form.empresa"
+              v-model="formData.empresa"
+              name="empresa"
               label="Empresa"
               variant="outlined"
             ></v-text-field>
@@ -63,7 +72,8 @@
 
           <div class="form-row">
             <v-text-field
-              v-model="form.email"
+              v-model="formData.email"
+              name="email"
               label="Email"
               variant="outlined"
               :rules="[rules.required, rules.email]"
@@ -71,14 +81,16 @@
             ></v-text-field>
             
             <v-text-field
-              v-model="form.telefono"
+              v-model="formData.telefono"
+              name="telefono"
               label="Teléfono"
               variant="outlined"
             ></v-text-field>
           </div>
 
           <v-select
-            v-model="form.asunto"
+            v-model="formData.asunto"
+            name="asunto"
             :items="asuntos"
             label="Asunto"
             variant="outlined"
@@ -87,13 +99,50 @@
           ></v-select>
 
           <v-textarea
-            v-model="form.mensaje"
+            v-model="formData.mensaje"
+            name="mensaje"
             label="Mensaje"
             variant="outlined"
             rows="5"
             required
             :rules="[rules.required]"
           ></v-textarea>
+
+          <!-- Campos ocultos de FormSubmit -->
+          <input type="hidden" name="_next" value="https://viser.cl/?success=true">
+          <input type="hidden" name="_subject" :value="`Nuevo contacto desde Viser - ${formData.nombre}`">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="_honey" style="display:none">
+          <input type="hidden" name="_template" value="box">
+
+          <!-- Personalización del correo -->
+          <input type="hidden" name="_email-template" value="
+            <h2>Nuevo Contacto desde Viser Ingeniería</h2>
+            <p>Se ha recibido un nuevo mensaje de contacto:</p>
+            
+            <div>
+              <p><strong>Nombre:</strong> {nombre}</p>
+              <p><strong>Empresa:</strong> {empresa}</p>
+              <p><strong>Email:</strong> {email}</p>
+              <p><strong>Teléfono:</strong> {telefono}</p>
+              <p><strong>Asunto:</strong> {asunto}</p>
+              <p><strong>Mensaje:</strong></p>
+              <p>{mensaje}</p>
+            </div>
+          ">
+
+          <!-- Respuesta automática -->
+          <input type="hidden" name="_autoresponse" value="
+            Gracias por contactar con Viser Ingeniería. 
+            Hemos recibido su mensaje y nos pondremos en contacto pronto.
+            
+            Saludos cordiales,
+            Equipo Viser Ingeniería
+          ">
+
+          <!-- Configuraciones adicionales -->
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_cc" value="otro@viser.cl,otrocorreo@viser.cl">
 
           <div class="form-footer">
             <v-btn 
@@ -122,22 +171,27 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 
-const loading = ref(false)
-const snackbar = reactive({
-  show: false,
-  text: '',
-  color: 'success'
-})
+const route = useRoute()
+const formRef = ref(null)
 
-const form = reactive({
+// Modificamos la forma de manejar el estado del formulario
+const formData = reactive({
   nombre: '',
   empresa: '',
   email: '',
   telefono: '',
   asunto: '',
   mensaje: ''
+})
+
+const loading = ref(false)
+const snackbar = reactive({
+  show: false,
+  text: '',
+  color: 'success'
 })
 
 const asuntos = [
@@ -152,19 +206,38 @@ const rules = {
   email: v => /.+@.+\..+/.test(v) || 'Email debe ser válido'
 }
 
+onMounted(() => {
+  if (route.query.success) {
+    snackbar.color = 'success'
+    snackbar.text = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.'
+    snackbar.show = true
+  }
+})
+
 const handleSubmit = async () => {
   loading.value = true
   try {
-    // Aquí iría la lógica de envío del formulario
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Simulación de envío
-    snackbar.color = 'success'
-    snackbar.text = '¡Mensaje enviado con éxito!'
-    snackbar.show = true
-    // Limpiar formulario
-    Object.keys(form).forEach(key => form[key] = '')
+    const formElement = formRef.value.$el
+    
+    // Asegurarnos de que los valores del formulario estén actualizados
+    Object.keys(formData).forEach(key => {
+      const input = formElement.querySelector(`[name="${key}"]`)
+      if (input) {
+        input.value = formData[key]
+      }
+    })
+    
+    await formElement.submit()
+    
+    // Limpiar formulario después del envío exitoso
+    Object.keys(formData).forEach(key => {
+      formData[key] = ''
+    })
+    
   } catch (error) {
+    console.error('Error al enviar el formulario:', error)
     snackbar.color = 'error'
-    snackbar.text = 'Error al enviar el mensaje'
+    snackbar.text = 'Error al enviar el mensaje. Por favor, intenta nuevamente.'
     snackbar.show = true
   } finally {
     loading.value = false

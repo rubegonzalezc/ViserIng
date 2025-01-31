@@ -32,7 +32,7 @@
                 height="400"
               ></v-img>
               <div class="experience-badge">
-                <span class="years">15+</span>
+                <span class="years">16+</span>
                 <span class="text">Años de Experiencia</span>
               </div>
             </div>
@@ -80,19 +80,29 @@
       description: 'Implementamos soluciones automatizadas que optimizan procesos y aumentan la productividad.'
     },
     {
-      icon: 'mdi-robot-industrial',
-      title: 'Robótica Avanzada',
-      description: 'Integramos sistemas robóticos de última generación para mejorar la eficiencia operativa.'
+      icon: 'mdi-engine-outline',
+      title: 'Electromecánica',
+      description: 'Diseño e implementación de sistemas electromecánicos para aplicaciones industriales.'
     },
     {
-      icon: 'mdi-chart-line',
-      title: 'Optimización de Procesos',
-      description: 'Analizamos y mejoramos los procesos industriales para maximizar el rendimiento.'
+      icon: 'mdi-flash-outline',
+      title: 'Instalaciones Eléctricas',
+      description: 'Desarrollo de instalaciones eléctricas seguras y eficientes para entornos industriales.'
     },
     {
-      icon: 'mdi-shield-check-outline',
-      title: 'Control de Calidad',
-      description: 'Implementamos sistemas de control que garantizan la calidad del producto final.'
+      icon: 'mdi-pencil-ruler',
+      title: 'Proyectos de Ingeniería',
+      description: 'Diseño y ejecución de proyectos integrales de ingeniería adaptados a sus necesidades.'
+    },
+    {
+      icon: 'mdi-electric-switch',
+      title: 'Proyectos Distribución BT y MT',
+      description: 'Soluciones especializadas en distribución de baja y media tensión.'
+    },
+    {
+      icon: 'mdi-power-plug-outline',
+      title: 'Subestaciones Eléctricas',
+      description: 'Diseño, construcción y mantenimiento de subestaciones eléctricas industriales.'
     }
   ]
   </script>

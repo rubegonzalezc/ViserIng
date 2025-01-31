@@ -43,6 +43,13 @@
 </template>
 
 <script setup>
+import btMtImage from '@/assets/project/bt-mt.jpg'
+import subestacionesImage from '@/assets/project/subestaciones.jpg'
+import instalacionImage from '@/assets/project/instalacion-electrica.jpg'
+import mantenimientoImage from '@/assets/project/manten-electromecanico.jpg'
+import canalizacionImage from '@/assets/project/canalizacion.jpg'
+import plantaImage from '@/assets/project/planta-proceso.jpg'
+
 const services = [
   {
     icon: 'mdi-cog-outline',
@@ -63,34 +70,34 @@ const services = [
 
 const projects = [
   {
-    image: 'https://www.autex-open.com/wp-content/uploads/2022/09/image.png',
-    title: 'Sistema SCADA para Planta Química',
-    description: 'Implementación de sistema de control y monitoreo en tiempo real'
+    image: btMtImage,
+    title: 'Distribución BT y MT',
+    description: 'Proyectos de distribución de baja y media tensión'
   },
   {
-    image: 'https://www.autex-open.com/wp-content/uploads/2022/09/image.png',
-    title: 'Célula Robótica Automotriz',
-    description: 'Automatización de línea de ensamblaje con robots industriales'
+    image: subestacionesImage,
+    title: 'Subestaciones',
+    description: 'Proyectos de subestaciones eléctricas'
   },
   {
-    image: 'https://www.autex-open.com/wp-content/uploads/2022/09/image.png',
-    title: 'Control de Calidad Automatizado',
-    description: 'Sistema de inspección visual por computadora'
+    image: instalacionImage,
+    title: 'Instalaciones Eléctricas',
+    description: 'Proyectos de instalaciones eléctricas industriales'
   },
   {
-    image: 'https://www.autex-open.com/wp-content/uploads/2022/09/image.png',
-    title: 'Modernización de Planta',
-    description: 'Actualización de sistemas de control legacy'
+    image: mantenimientoImage,
+    title: 'Mantenimiento Electromecánico',
+    description: 'Proyectos de mantenimiento electromecánico'
   },
   {
-    image: 'https://www.autex-open.com/wp-content/uploads/2022/09/image.png',
-    title: 'Sistema IoT Industrial',
-    description: 'Monitoreo remoto de activos industriales'
+    image: canalizacionImage,
+    title: 'Canalizaciones',
+    description: 'Proyectos de canalizaciones industriales'
   },
   {
-    image: 'https://www.autex-open.com/wp-content/uploads/2022/09/image.png',
-    title: 'Automatización de Almacén',
-    description: 'Sistema automatizado de gestión de inventario'
+    image: plantaImage,
+    title: 'Plantas de Proceso',
+    description: 'Proyectos de plantas de proceso industriales'
   }
 ]
 </script>

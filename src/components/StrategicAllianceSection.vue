@@ -10,8 +10,8 @@
       
       <div class="logo-container mt-8" data-aos="fade-up" data-aos-delay="100">
         <v-img
-          src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg"
-          alt="Logo de Tesla"
+          src="https://www.bender-latinamerica.com/fileadmin/bootstrap_package_med/Resources/img/logos/Bender-GmbH-Co-KG-Logo.svg"
+          alt="Logo de Bender"
           class="alianza-logo"
           width="200"
           height="200"
@@ -61,29 +61,25 @@
 <script setup>
 const partnerLogos = [
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'Microsoft'
-  },
-  {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'Google'
-  },
-  {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'IBM'
-  },
-  {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
-    alt: 'AWS'
-  },
-  {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
+    src: 'https://1000marcas.net/wp-content/uploads/2019/12/Logo-Siemens.png',
     alt: 'Siemens'
   },
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg',
+    src: 'https://comserltda.cl/wp-content/uploads/2019/04/vacon.png',
+    alt: 'Vacon'
+  },
+  {
+    src: 'https://www.tvh.com/sites/tvh/files/styles/max_650x650/public/2023-08/Schneider-Electric-logo-jpg-.png?itok=pxXk-20m',
     alt: 'Schneider Electric'
-  }
+  },
+  {
+    src: 'https://1000marcas.net/wp-content/uploads/2020/03/logo-ABB.png',
+    alt: 'ABB'
+  },
+  {
+    src: 'https://wittmannmexico.com/wp-content/uploads/2022/08/03e924e5c79a1fbc10077d550fbf4146_wittlogo_pantone.png',
+    alt: 'Bettenfield'
+  },
 ]
 </script>
 

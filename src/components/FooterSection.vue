@@ -6,7 +6,7 @@
         <v-col cols="12" md="4" class="footer-brand">
           <div class="logo-container">
             <v-img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg"
+              src="@/assets/logo.png"
               alt="Logo"
               width="180"
               class="mb-4"
@@ -73,14 +73,21 @@
           <p>&copy; {{ new Date().getFullYear() }} Viser Ingeniería. Todos los derechos reservados.</p>
           <div class="developer-info">
             Desarrollado por 
-            <v-img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg"
-              alt="Developer Logo"
-              width="50"
-              height="50"
-              class="developer-logo"
-              contain
-            ></v-img>
+            <a 
+              href="https://synchrodev.cl" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="developer-link"
+            >
+              <v-img
+                src="https://test.synchrodev.cl/assets/logo_synchro_dark-CT9K6r8Y.png"
+                alt="Developer Logo"
+                width="80"
+                height="80"
+                class="developer-logo"
+                contain
+              ></v-img>
+            </a>
           </div>
         </div>
       </div>
@@ -98,17 +105,13 @@ const quickLinks = [
 ]
 
 const contactInfo = [
-  { text: 'Av. Principal 123, Ciudad', icon: 'mdi-map-marker' },
-  { text: '+1 234 567 890', icon: 'mdi-phone' },
-  { text: 'contacto@empresa.com', icon: 'mdi-email' },
-  { text: 'Lun - Vie: 9:00 - 18:00', icon: 'mdi-clock' }
+  { text: 'Av.Quilin 4375, Macul, Santiago, Chile', icon: 'mdi-map-marker' },
+  { text: '+56 9 6219 820', icon: 'mdi-phone' },
+  { text: 'contacto@viser.com', icon: 'mdi-email' },
 ]
 
 const socialLinks = [
-  { icon: 'mdi-facebook', url: 'https://facebook.com' },
-  { icon: 'mdi-twitter', url: 'https://twitter.com' },
-  { icon: 'mdi-linkedin', url: 'https://linkedin.com' },
-  { icon: 'mdi-instagram', url: 'https://instagram.com' }
+  { icon: 'mdi-linkedin', url: 'https://www.linkedin.com/in/viser-ingeniería-aa8692266/?originalSubdomain=cl' },
 ]
 </script>
 
@@ -203,6 +206,17 @@ const socialLinks = [
   gap: 0.3rem;
   margin-top: 0.5rem;
   font-size: 0.85rem;
+}
+
+.developer-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.developer-link:hover {
+  transform: translateY(-2px);
 }
 
 .developer-logo {

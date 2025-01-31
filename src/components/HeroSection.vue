@@ -48,8 +48,8 @@ import { onMounted } from 'vue'
 
 const stats = [
   { number: 15, label: 'Años de Experiencia' },
-  { number: 200, label: 'Proyectos Completados' },
-  { number: 50, label: 'Clientes Satisfechos' }
+  { number: 16, label: 'Proyectos Completados' },
+  { number: 9, label: 'Clientes Satisfechos' }
 ]
 
 const scrollToSection = (sectionId) => {
@@ -107,6 +107,7 @@ onMounted(() => {
   color: white;
   overflow: hidden;
   background: url('@/assets/fondo/Pneumatica-olehidraulica.jpg') center center / cover no-repeat;
+  padding-top: 70px; /* Añadido para dar espacio al navbar */
 }
 
 .hero::before {
@@ -142,7 +143,7 @@ onMounted(() => {
 .hero-content {
   position: relative;
   z-index: 3;
-  padding-top: 80px; /* Ajuste para el navbar */
+  padding-top: 4rem; /* Aumentado el padding superior */
 }
 
 .hero-stats {
@@ -206,6 +207,29 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 60px; /* Ajustado para móviles */
+  }
+
+  .hero-content {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem !important;
+    margin-top: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem !important;
+  }
+
+  .hero-stats {
+    margin-top: 2rem;
+  }
+
   .stat-number {
     font-size: 2.8rem;
   }
@@ -217,14 +241,6 @@ onMounted(() => {
   
   .stat-label {
     font-size: 1rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem !important;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem !important;
   }
 }
 </style>
